@@ -6,12 +6,19 @@ import { User } from './entities/user.entity';
 export class UsersService {
   private users: User[] = [{ id: 0, name: 'Marcus' }];
 
-  findAll() {
-    return this.users;
+  findAll(name) {
+    if (!name) return this.users;
+    return this.users.filter((user) =>
+      user.name.toLowerCase().includes(name.toLowerCase()),
+    );
   }
 
   findById(userId: number): User {
     return this.users.find((user) => user.id === userId);
+  }
+
+  findByQuery(name: string): User {
+    return this.users.find((user) => user.name === name);
   }
 
   createUser(CreateUserDto: CreateUserDto): { msg: string; user: User } {
