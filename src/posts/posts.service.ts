@@ -1,4 +1,4 @@
-import { isObjectIdOrHexString, Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { PostClass, PostDocument } from './schemas/post.schema';
@@ -13,7 +13,7 @@ export class PostsService {
   }
 
   async findById(id: string): Promise<PostClass> {
-    return await this.postModel.find({ _id: id }).exec();
+    return await this.postModel.findOne({ _id: new Types.ObjectId(id) }).exec();
   }
 
   async create(
