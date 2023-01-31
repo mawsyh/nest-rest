@@ -5,6 +5,4 @@ export class CreatePostDto {
   title: string;
   @ApiProperty()
   body: string;
-  @ApiProperty()
-  comments: number;
 }

@@ -1,6 +1,5 @@
 export class PostEntity {
-  id: number;
+  id: string;
   title: string;
-  comments: number;
   body: string;
 }

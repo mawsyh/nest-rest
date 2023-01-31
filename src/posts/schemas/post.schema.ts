@@ -13,9 +13,6 @@ export class PostClass {
   title: string;
 
   @Prop()
-  comments: number;
-
-  @Prop()
   body: string;
 }
 
