@@ -10,7 +10,7 @@ import { CommentsModule } from './comments/comments.module';
   imports: [
     UsersModule,
     PostsModule,
-    MongooseModule.forRoot('mongodb://localhost/blog'),
+    MongooseModule.forRoot('mongodb://198.12.65.145/blog'),
     CommentsModule,
   ],
   controllers: [AppController],
