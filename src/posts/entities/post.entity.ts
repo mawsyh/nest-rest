@@ -1,6 +1,5 @@
-export class Post {
-  id: number;
+export class PostEntity {
+  id: string;
   title: string;
-  comments: number;
   body: string;
 }
