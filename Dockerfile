@@ -2,7 +2,7 @@
 FROM node:18-alpine
 
 ARG NODE_ENV=production
-ENV NODE_ENV=${NODE_ENV}
+ENV NODE_ENV=${NODE_ENV}                                                                                                        
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -20,7 +20,9 @@ COPY . .
 RUN npm run build
 
 # Not root permission
-USER node
+# USER node
 
+EXPOSE 3000
 # Start the server using the production build
 CMD ["npm", "run", "start:prod"]
+
